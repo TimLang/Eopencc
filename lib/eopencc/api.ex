@@ -22,7 +22,12 @@ defmodule Eopencc.Api do
     worker = :poolboy.checkout(:eopencc_pool)
     {w, h} = Worker.call_ruby(worker, op, [str])
     :poolboy.checkin(:eopencc_pool, worker)
-    {w, h}
+    case {w, h} do
+      {:ok, result} ->
+        result
+      {:error, _} ->
+        str
+    end
   end
 
 end
