@@ -9,8 +9,8 @@ config :eopencc, settings: [
   {:poolboy, [
     name: {:local, :eopencc_pool},
     worker_module: Eopencc.Worker,
-    size: 10,
-    max_overflow: 20
+    size: 2,
+    max_overflow: 4
   ]}
 ]
 
