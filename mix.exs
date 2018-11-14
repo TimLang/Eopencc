@@ -39,9 +39,12 @@ defmodule Eopencc.Mixfile do
     [
       {:apex, "~> 0.4.0", only: [:dev]},
       {:exsync, "~> 0.1.2", only: [:dev]},
-      {:erlport, github: "hdima/erlport", manager: :make},
+      {:erlport, "~> 0.7"},
       {:exrm, "~> 1.0.5"},
-      {:poolboy, "~> 1.5"}
+      {:poolboy, "~> 1.5"},
+      {:relx, "~>3.27"},
+      {:erlware_commons, "~> 1.3.0"}
+
     ]
   end
 end
